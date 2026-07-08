@@ -27,21 +27,21 @@ DASHBOARDS = {
         "desc":  "Team capacity, budgeted vs target hours, and role-level workload roll-ups.",
         "icon":  "\U0001F4CA",      # 📊
         "color": "#1f6fc4",
-        "url":   "",  # e.g. "https://vpac-workload.streamlit.app"
+        "url":   "https://vpac-workload.streamlit.app/",
     },
     "scorecard": {
-        "title": "Scorecard Dashboard",
-        "desc":  "Weekly member scorecards, KPI submissions, and quarterly performance.",
+        "title": "Site Super Scorecard",
+        "desc":  "Site superintendent scorecards, KPI submissions, and quarterly performance.",
         "icon":  "\U0001F3AF",      # 🎯
         "color": "#2b9348",
-        "url":   "",  # e.g. "https://vpac-site-super-scorecard.streamlit.app"
+        "url":   "https://vpac-site-super-scorecard-smk29mdtuzrwx6ooihrysl.streamlit.app/",
     },
     "sales": {
         "title": "Sales Dashboard",
         "desc":  "Pipeline, pace-to-goal, new build pre-con, and fiscal-year sales performance.",
         "icon":  "\U0001F4C8",      # 📈
         "color": "#e07a1f",
-        "url":   "",  # e.g. "https://vpac-sales-dashboard.streamlit.app"
+        "url":   "https://vpac-sales-dashboard.streamlit.app/",
     },
     "forecasting": {
         "title": "Forecasting Dashboard",
@@ -56,6 +56,13 @@ DASHBOARDS = {
         "icon":  "\U0001F3D7️",  # 🏗️
         "color": "#0d9488",
         "url":   "",  # leave blank -> "Coming soon"
+    },
+    "psp_scorecard": {
+        "title": "PSP Scorecard",
+        "desc":  "Project Support Person scorecards, KPI submissions, and performance tracking.",
+        "icon":  "\U0001F4CB",      # 📋
+        "color": "#c0392b",
+        "url":   "https://vpac-psp-scorecard.streamlit.app/",
     },
     # To add another dashboard later, copy a block above and give it a new id.
 }
