@@ -167,7 +167,23 @@ ids = allowed_for(person)
 view = st.session_state.get("view")
 if view and view in ids and DASHBOARDS[view]["url"]:
     d = DASHBOARDS[view]
-    top = st.columns([1.4, 6])
+    sep = "&" if "?" in d["url"] else "?"
+    embed_url = d["url"] + sep + "embed=true"
+
+    # go full-width and trim padding while a dashboard is open
+    st.markdown(
+        """
+        <style>
+          .block-container {max-width:100% !important;
+            padding:0.6rem 1.2rem 0 !important;}
+          .vpac-header {display:none;}
+          header[data-testid="stHeader"] {height:0;}
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    top = st.columns([1.3, 4.6, 1.3])
     with top[0]:
         if st.button("← Back to portal", use_container_width=True):
             st.session_state.pop("view", None)
@@ -178,8 +194,10 @@ if view and view in ids and DASHBOARDS[view]["url"]:
             f"{d['icon']} &nbsp;{d['title']}</div>",
             unsafe_allow_html=True,
         )
-    sep = "&" if "?" in d["url"] else "?"
-    components.iframe(d["url"] + sep + "embed=true", height=1100, scrolling=True)
+    with top[2]:
+        st.link_button("⤢ Full screen", embed_url, use_container_width=True)
+
+    components.iframe(embed_url, height=1500, scrolling=True)
     st.stop()
 
 # ---- Step 2: What would you like to see today? ----
