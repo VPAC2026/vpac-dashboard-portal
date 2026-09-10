@@ -88,7 +88,17 @@ PEOPLE = {
     "Gerhard Booysen":   all_but("sales"),                      # everything but Sales
     "Marguerite Butler": all_but("sales"),                      # everything but Sales
     "Sina Jafarian":     ["psp_scorecard", "sales"],
-    "Kash Shafiei":      ["assets", "psp_scorecard", "workload"],
+
+    # PSP Scorecard + Site Super access only
+    "Justin Shudo":      ["psp_scorecard", "scorecard"],
+    "Dexter Juric":      ["psp_scorecard", "scorecard"],
+    "Justine Belanger":  ["psp_scorecard", "scorecard"],
+    "Rayan Mohamed":     ["psp_scorecard", "scorecard"],
+    "Adam Kasbar":       ["psp_scorecard", "scorecard"],
+    "Dylan Galovich":    ["psp_scorecard", "scorecard"],
+    "Jason Diao":        ["psp_scorecard", "scorecard"],
+    "Paden Cuthill":     ["psp_scorecard", "scorecard"],
+    "Ryan Stimson":      ["psp_scorecard", "scorecard"],
 }
 
 # =============================================================================
