@@ -1,11 +1,15 @@
 name: Keep dashboards awake
 
-# Streamlit Community Cloud sleeps an app after 12h with no real browser
-# traffic. This drives a headless browser against each live dashboard every
-# 3 hours (24/7) so they never sleep. Runs are free on public repos.
+# Streamlit Community Cloud spins a container down after just a few minutes of
+# no active session (the "waking up" coffee-cup splash), and fully hibernates
+# after 12h idle. To keep the containers hot we drive a real headless browser
+# against each dashboard every 5 minutes (24/7). Free on public repos.
+# NOTE: GitHub may delay/skip scheduled runs under load, so occasional splashes
+# can still slip through on the free tier — always-on hosting is the only way
+# to guarantee zero cold starts.
 on:
   schedule:
-    - cron: "0 */3 * * *"   # every 3 hours, every day (UTC)
+    - cron: "*/5 * * * *"    # every 5 minutes, every day (UTC)
   workflow_dispatch:         # allow manual "Run workflow" from the Actions tab
 
 # If a scheduled run is still going when the next fires, skip the new one.
